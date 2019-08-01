@@ -1,7 +1,11 @@
 import Link from 'next/link';
 
 const Header = () => (
-  <nav className="navbar is-light" role="navigation" aria-label="main navigation">
+  <nav
+    className="navbar is-light"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div className="navbar-brand">
       <Link href="/">
         <a className="navbar-item">
@@ -28,9 +32,7 @@ const Header = () => (
 
     <div className="navbar-start">
       <Link href="/about">
-        <a className="navbar-item">
-          Sobre
-        </a>
+        <a className="navbar-item">Sobre</a>
       </Link>
     </div>
 
@@ -41,21 +43,17 @@ const Header = () => (
 
           <div className="navbar-dropdown">
             <Link href="/">
-              <a className="navbar-item">
-                Produto 1
-              </a>
+              <a className="navbar-item">Produto 1</a>
             </Link>
           </div>
         </div>
 
         <Link href="/">
-          <a className="navbar-item">
-            Produto 1
-          </a>
+          <a className="navbar-item">Produto 1</a>
         </Link>
       </div>
     </div>
   </nav>
-)
+);
 
 export default Header;

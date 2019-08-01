@@ -6,9 +6,7 @@ import '../node_modules/bulma/bulma.sass';
 const Layout = props => (
   <div>
     <Header />
-    <div className="section">
-      {props.children}
-    </div>
+    <div className="section">{props.children}</div>
   </div>
 );
 
