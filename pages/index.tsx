@@ -11,18 +11,18 @@ const Home = () => (
           <div className="column is-3">
             <div className="card">
               <div className="card-content">
-                <p className="title">{ product.title }</p>
+                <p className="title">{product.title}</p>
                 <div className="content">
-                  <b>storeId: </b> { product.storeId }
+                  <b>storeId: </b> {product.storeId}
                   <br />
-                  <b>productId: </b> { product.productId }
+                  <b>productId: </b> {product.productId}
                   <br />
                 </div>
               </div>
               <footer className="card-footer">
                 <p className="card-footer-item">
                   <Link href="/[id]" as={`/${product.id}`}>
-                    <a>Ir para { product.title }</a>
+                    <a>Ir para {product.title}</a>
                   </Link>
                 </p>
               </footer>

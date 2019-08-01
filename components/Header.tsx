@@ -1,20 +1,21 @@
 import Link from 'next/link';
 import { products } from '../utils/products';
 
-const categories = products.map(product => product.category).filter(category => category)
-const uniqueCategories = Array.from(new Set(categories))
+const categories = products
+  .map(product => product.category)
+  .filter(category => category);
+const uniqueCategories = Array.from(new Set(categories));
 
 const fromCategory = (products, category: string | null) => {
-  return products.filter(product => product.category === category)
-}
+  return products.filter(product => product.category === category);
+};
 
-const linksFromCategory = (products, category) => (
+const linksFromCategory = (products, category) =>
   fromCategory(products, category).map(product => (
     <Link href="/[id]" as={`/${product.id}`} key={product.id}>
-      <a className="navbar-item">{ product.title }</a>
+      <a className="navbar-item">{product.title}</a>
     </Link>
-  ))
-)
+  ));
 
 const Header = () => (
   <nav
@@ -56,10 +57,10 @@ const Header = () => (
       <div className="navbar-end">
         {uniqueCategories.map(category => (
           <div className="navbar-item has-dropdown is-hoverable" key={category}>
-            <a className="navbar-link">{ category }</a>
+            <a className="navbar-link">{category}</a>
 
             <div className="navbar-dropdown">
-             {linksFromCategory(products, category)}
+              {linksFromCategory(products, category)}
             </div>
           </div>
         ))}
