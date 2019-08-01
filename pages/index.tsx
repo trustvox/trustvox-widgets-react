@@ -18,7 +18,7 @@ const Home = () => (
             </div>
             <footer className="card-footer">
               <p className="card-footer-item">
-                <Link href="/">
+                <Link href="/1">
                   <a>Ir para Product 1</a>
                 </Link>
               </p>
