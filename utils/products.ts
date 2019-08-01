@@ -129,6 +129,6 @@ export const products = [
   }
 ];
 
-export const getProduct = (productId: any) => {
+export const getProduct = productId => {
   return products.find(product => product.id === parseInt(productId));
 };
