@@ -8,7 +8,7 @@ const Home = () => (
     <div className="container">
       <div className="columns is-multiline is-mobile">
         {products.map(product => (
-          <div className="column is-3">
+          <div className="column is-3" key={product.id}>
             <div className="card">
               <div className="card-content">
                 <p className="title">{product.title}</p>

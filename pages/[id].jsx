@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
+import ProductReviews from '../components/ProductReviews';
 
 import { getProduct } from '../utils/products';
 
@@ -19,6 +20,7 @@ const Home = () => {
     <Layout>
       <div v-if="product">
         <h2 className="title is-2">{product.title}</h2>
+        <ProductReviews product={product} />
       </div>
     </Layout>
   );
