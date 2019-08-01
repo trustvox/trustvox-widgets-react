@@ -1,30 +1,34 @@
 import Link from 'next/link';
 import Layout from '../components/Layout';
 
+import { products } from '../utils/products';
+
 const Home = () => (
   <Layout>
     <div className="container">
       <div className="columns is-multiline is-mobile">
-        <div className="column is-3">
-          <div className="card">
-            <div className="card-content">
-              <p className="title">Product 1</p>
-              <div className="content">
-                <b>storeId: </b> 0000
-                <br />
-                <b>productId: </b> 0000
-                <br />
+        {products.map(product => (
+          <div className="column is-3">
+            <div className="card">
+              <div className="card-content">
+                <p className="title">{ product.title }</p>
+                <div className="content">
+                  <b>storeId: </b> { product.storeId }
+                  <br />
+                  <b>productId: </b> { product.productId }
+                  <br />
+                </div>
               </div>
+              <footer className="card-footer">
+                <p className="card-footer-item">
+                  <Link href="/[id]" as={`/${product.id}`}>
+                    <a>Ir para { product.title }</a>
+                  </Link>
+                </p>
+              </footer>
             </div>
-            <footer className="card-footer">
-              <p className="card-footer-item">
-                <Link href="/1">
-                  <a>Ir para Product 1</a>
-                </Link>
-              </p>
-            </footer>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   </Layout>
